@@ -1,0 +1,206 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+
+html,
+body {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+body {
+  font-family: var(--font-body);
+  font-feature-settings: "ss01", "cv02", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--acid);
+  color: var(--ink);
+}
+
+/* ─── Clerk component overrides ─────────────────────────────────────────────
+   Clerk compiles styles internally; CSS variables and inline style objects
+   in the appearance API don't reach the actual input elements. These direct
+   class overrides are the reliable path.
+──────────────────────────────────────────────────────────────────────────── */
+
+/* Card shell */
+.cl-card,
+.cl-cardBox,
+.cl-signIn-root,
+.cl-signUp-root {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Inputs */
+.cl-formFieldInput,
+.cl-input {
+  background: var(--slate) !important;
+  border: 1px solid rgba(242, 237, 228, 0.1) !important;
+  color: var(--paper) !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  transition: border-color 0.15s !important;
+}
+.cl-formFieldInput:focus,
+.cl-input:focus {
+  border-color: rgba(198, 255, 61, 0.45) !important;
+  box-shadow: 0 0 0 1px rgba(198, 255, 61, 0.2) !important;
+  outline: none !important;
+}
+/* Browser autofill — prevent the white flash */
+.cl-formFieldInput:-webkit-autofill,
+.cl-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px var(--slate) inset !important;
+  -webkit-text-fill-color: var(--paper) !important;
+}
+
+/* Labels */
+.cl-formFieldLabel {
+  color: var(--bone) !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* Primary button */
+.cl-formButtonPrimary {
+  background: var(--acid) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+.cl-formButtonPrimary:hover {
+  background: var(--acid-dim) !important;
+}
+
+/* Social buttons */
+.cl-socialButtonsBlockButton {
+  background: var(--slate) !important;
+  border: 1px solid rgba(242, 237, 228, 0.08) !important;
+  color: var(--paper) !important;
+  border-radius: 8px !important;
+}
+.cl-socialButtonsBlockButton:hover {
+  background: var(--slate-2) !important;
+  border-color: rgba(242, 237, 228, 0.14) !important;
+}
+.cl-socialButtonsBlockButtonText {
+  color: var(--paper) !important;
+  font-size: 13px !important;
+}
+
+/* Divider */
+.cl-dividerLine {
+  background: rgba(242, 237, 228, 0.08) !important;
+}
+.cl-dividerText {
+  color: var(--bone-2) !important;
+  font-size: 11px !important;
+}
+
+/* Header (hide Clerk's own title — we render our own) */
+.cl-headerTitle,
+.cl-headerSubtitle {
+  display: none !important;
+}
+
+/* Footer links */
+.cl-footerActionLink {
+  color: var(--acid) !important;
+}
+.cl-footerActionText {
+  color: var(--bone-2) !important;
+  font-size: 12px !important;
+}
+.cl-footer {
+  background: transparent !important;
+}
+
+/* Error / hint text */
+.cl-formFieldErrorText {
+  color: #ff4d3a !important;
+  font-size: 12px !important;
+}
+.cl-formFieldHintText {
+  color: var(--bone-2) !important;
+}
+
+/* Alert */
+.cl-alert {
+  background: var(--slate-2) !important;
+  border: 1px solid rgba(242, 237, 228, 0.08) !important;
+  border-radius: 8px !important;
+  color: var(--paper) !important;
+}
+
+/* UserButton popup */
+.cl-userButtonPopoverCard {
+  background: var(--slate) !important;
+  border: 1px solid rgba(242, 237, 228, 0.08) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.9) !important;
+  color: var(--paper) !important;
+}
+.cl-userButtonPopoverActionButton {
+  color: var(--paper) !important;
+  border-radius: 8px !important;
+}
+.cl-userButtonPopoverActionButton:hover {
+  background: rgba(242, 237, 228, 0.05) !important;
+}
+.cl-userButtonPopoverActionButtonText {
+  color: var(--paper) !important;
+  font-size: 13px !important;
+}
+.cl-userButtonPopoverActionButtonIcon {
+  color: var(--bone) !important;
+}
+.cl-userButtonPopoverFooter {
+  border-top: 1px solid rgba(242, 237, 228, 0.08) !important;
+  background: transparent !important;
+}
+
+/* User profile modal */
+.cl-modalContent,
+.cl-profilePage,
+.cl-userProfile-root {
+  background: var(--slate) !important;
+  color: var(--paper) !important;
+}
+.cl-navbar,
+.cl-navbarMobileMenuRow {
+  background: var(--ink) !important;
+  border-right: 1px solid rgba(242, 237, 228, 0.06) !important;
+}
+.cl-navbarButton {
+  color: var(--bone) !important;
+  border-radius: 6px !important;
+}
+.cl-navbarButton:hover,
+.cl-navbarButton[data-active="true"] {
+  background: rgba(242, 237, 228, 0.05) !important;
+  color: var(--paper) !important;
+}
+.cl-profileSectionTitle {
+  border-bottom: 1px solid rgba(242, 237, 228, 0.06) !important;
+}
+.cl-profileSectionTitleText {
+  color: var(--paper) !important;
+}
