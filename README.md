@@ -135,3 +135,5 @@ src/
   thought (dim acid rail) → tool_call pill (if any) → tool_result → streaming
   output. Collapsing thought animates with a clip-path reveal.
 - `npm run build` succeeds end-to-end.
+
+- that's it
