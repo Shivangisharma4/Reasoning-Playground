@@ -136,4 +136,3 @@ src/
   output. Collapsing thought animates with a clip-path reveal.
 - `npm run build` succeeds end-to-end.
 
-- that's it
